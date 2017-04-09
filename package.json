@@ -1,0 +1,32 @@
+{
+  "name": "expedia",
+  "version": "1.0.0",
+  "description": "It is a JSON API that presents a bunch of Hotel deals.",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha server/test.js",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimtamimi/ExpediaHotelDeals.git"
+  },
+  "author": "ibrahim tamimi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrahimtamimi/ExpediaHotelDeals/issues"
+  },
+  "homepage": "https://github.com/ibrahimtamimi/ExpediaHotelDeals#readme",
+  "dependencies": {
+    "angular-route": "^1.6.4",
+    "body-parser": "^1.17.1",
+    "chai": "^3.5.0",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "request": "^2.81.0",
+    "supertest": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
