@@ -1,12 +1,13 @@
 {
-  "name": "expedia",
-  "description": "It is a JSON API that presents a bunch of Hotel deals.",
+  "name": "rbk_system",
+  "description": "RBK System 2017",
   "main": "server.js",
   "authors": [
-    "ibrahim tamimi"
+    "ibrahim tamimi",
+    "Majd Eddin AlMuhder"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/ibrahimtamimi/ExpediaHotelDeals",
+  "homepage": "https://github.com/RBKProjects/rbkSiteSystem",
   "private": true,
   "ignore": [
     "**/.*",
