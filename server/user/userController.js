@@ -3,7 +3,6 @@ const mongoose = require ('mongoose');
 
 module.exports = {
 	signup : (req, res) => {
-		console.log(req.body)
 		User.create(req.body.user, (err, data)=> {
 			if (err) {
 				throw err;
