@@ -1,6 +1,6 @@
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 1030;
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 1030;
 
 require('./config/middleware.js') (app,express);
 require('./config/routes.js') (app,express);
