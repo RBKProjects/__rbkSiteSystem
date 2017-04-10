@@ -1,7 +1,7 @@
 {
-  "name": "expedia",
+  "name": "rbk_system",
   "version": "1.0.0",
-  "description": "It is a JSON API that presents a bunch of Hotel deals.",
+  "description": "RBK System 2017",
   "main": "server.js",
   "scripts": {
     "test": "mocha server/test.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibrahimtamimi/ExpediaHotelDeals.git"
+    "url": "git+https://github.com/RBKProjects/rbkSiteSystem"
   },
   "author": "ibrahim tamimi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ibrahimtamimi/ExpediaHotelDeals/issues"
+    "url": "https://github.com/RBKProjects/rbkSiteSystem/issues"
   },
-  "homepage": "https://github.com/ibrahimtamimi/ExpediaHotelDeals#readme",
+  "homepage": "https://github.com/RBKProjects/rbkSiteSystem#readme",
   "dependencies": {
     "angular-route": "^1.6.4",
     "body-parser": "^1.17.1",
