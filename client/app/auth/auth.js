@@ -4,6 +4,15 @@ angular.module('rbkSiteSystem.auth', [])
 	
 
 	$scope.test = function () {
-		console.log("kl;jhgcfxgd")
+		//console.log($scope.user)
+		User.signup($scope.user).then((data)=> {
+			console.log(data)
+		})
 	}
+
+	$scope.test1 = function () {
+		User.login($scope.userData).then((data)=>{
+			console.log(data)
+		})
+	} 
 });

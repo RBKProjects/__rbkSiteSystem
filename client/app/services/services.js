@@ -15,7 +15,7 @@ angular.module('rbkSiteSystem.services',[])
 		return $http({
 			method : 'POST',
 			url : '/api/user/signup',
-			data : userData
+			data : { user : userData }
 		}).then((resp)=> {
 			return resp;
 		})

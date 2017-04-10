@@ -15,19 +15,15 @@ const UserSchema = new mongoose.Schema({
 	},
 	phone : {
 		type : String,
-		required : true
 	},
 	nationality : {
 		type : String,
-		required : true
 	},
 	gender : {
 		type : String,
-		required : true
 	},
 	isRefugee : {
 		type : Boolean,
-		required : true
 	},
 	email : {
 		type : String,
