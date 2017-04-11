@@ -33,7 +33,7 @@ const UserSchema = new mongoose.Schema({
 	emailCode : {
 		type: String
 	},
-	isActive : {
+	isEmailVerified : {
 		type : Boolean,
 		default : false
 	}

@@ -8,14 +8,35 @@ module.exports = {
 	signup : (req, res) => {
 		let userData  = req.body.user;
 		userData.emailCode = helper.randCode();
-		userModel.create(userData, (err, data)=> {
-			if (err) {
-				throw err;
-			}else{
-				helper.verify(data.email, data.emailCode);
-				res.json(data);
+		userModel.findOne({email : userData.email}, (err, userEX)=>{
+			console.log(userEX,err);
+			if (userEX) {
+				res.json("user already exisit")
+			}else {
+				userModel.create(userData, (err, data)=> {
+					if (err) {
+						res.status(500).send(err);
+					}else{
+						helper.verify(data.email, data.emailCode);
+						res.json(data);
+					}
+				});
 			}
-		});
+		})
+	},
+
+	isEmailVerified : (req, res)=>{
+		userModel.findOne({_id: req.body.id}, (err, data) => {
+			if (err) {
+				res.status(500).send(err);
+			}else {
+				if (data.isEmailVerified) {
+					res.json(true)
+				}else {
+					res.json(false)
+				}
+			}
+		})
 	},
 
 	verifyUser : (req, res) => {
@@ -23,12 +44,18 @@ module.exports = {
 			if (err){
 				res.status(500).send(err);
 			}else{
+				console.log(user.emailCode,"user from database");
+				console.log(req.body.emailCode,"requset user ");
 				if (user.emailCode === req.body.emailCode){
 					user.isEmailVerified = true;
-					res.json(true);
+					user.save(function (err, user) {
+					   if (err) {
+						   res.status(500).send(err)
+					   }
+					   res.json(user);
+				    });
 				}else{
 					res.json(false);
-					user.isEmailVerified = false;
 				}
 			}
 		});

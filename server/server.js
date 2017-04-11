@@ -6,7 +6,7 @@ const port = process.env.PORT || 1030;
 //=============================================================================
 /*								Database									 */
 //=============================================================================
-	const mongoURI = process.env.MONGODB_URI ||'mongodb://localhost/rbkSiteSystem';
+	const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/rbkSiteSystem';
 	mongoose.connect(mongoURI);
 	db = mongoose.connection;
 
