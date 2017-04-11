@@ -4,11 +4,11 @@ const UserSchema = new mongoose.Schema({
 	firstName : {
 		type : String,
 		required : true
-	}, 
+	},
 	lastName : {
 		type : String,
 		required : true
-	}, 
+	},
 	password : {
 		type : String,
 		required : true
@@ -30,8 +30,8 @@ const UserSchema = new mongoose.Schema({
 		required : true,
 		unique: true,
 	},
-	email_code : {
-		type: String 
+	emailCode : {
+		type: String
 	},
 	isActive : {
 		type : Boolean,

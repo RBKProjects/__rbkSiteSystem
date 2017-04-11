@@ -9,7 +9,7 @@ angular.module('rbkSiteSystem.services',[])
 		}).then((resp)=> {
 			return resp;
 		})
-	}	
+	}
 
 	let signup = function (userData) {
 		return $http({
@@ -26,6 +26,15 @@ angular.module('rbkSiteSystem.services',[])
 		return $http({
 			method : 'PUT',
 			url : '/api/user/update/:' + userData.id,
+			data : userData
+		}).then((resp)=> {
+			return resp;
+		})
+	}
+	let verifyUser = function (userData) {
+		return $http({
+			method : 'POST',
+			url : '/api/user/verify/:' + userData.id,
 			data : userData
 		}).then((resp)=> {
 			return resp;
