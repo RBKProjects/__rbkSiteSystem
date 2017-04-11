@@ -1,16 +1,16 @@
 angular.module('rbkSiteSystem.auth', [])
 
-.controller('authController', function ($scope, User) {
+.controller('authController', function ($scope, User, $location, $window ) {
 	
 
-	$scope.test = function () {
-		//console.log($scope.user)
+	$scope.signup = function () {
 		User.signup($scope.user).then((data)=> {
-			console.log(data)
+	        $location.path('/signin');
+    	    $window.location.reload();
 		})
 	}
 
-	$scope.test1 = function () {
+	$scope.signin = function () {
 		User.login($scope.userData).then((data)=>{
 			console.log(data)
 		})
