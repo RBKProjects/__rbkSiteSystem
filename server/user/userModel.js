@@ -52,7 +52,7 @@ const UserSchema = new mongoose.Schema({
 	emailCode : {
 		type: String
 	},
-	isEmailVerifid : {
+	isEmailVerified : {
 		type : Boolean,
 	}
 })
