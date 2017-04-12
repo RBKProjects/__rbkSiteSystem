@@ -11,15 +11,18 @@ angular.module('rbkSiteSystem.auth', [])
 	}
 
 	//console.log(data.data['_id'])
-	//$location.path('/verify/:'+ data.data['_id']);
-	//$window.location.reload();
 
 	$scope.signin = function (user) {
-		console.log(user)
 		User.login(user).then((data)=>{
-			//console.log(data.data.userId)
-			User.isEmailVerified(data.data.userId).then((resp)=>{
-
+			console.log(data.data.id)
+			User.isEmailVerified(data.data).then((resp)=>{
+				if (resp.data){
+					$location.path('/update/:'+ data.data['id']);
+					$window.location.reload();
+				}else{
+					$location.path('/verify/:'+ data.data['id']);
+					$window.location.reload();
+				}
 			})
 		})
 	}

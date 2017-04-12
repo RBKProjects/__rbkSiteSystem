@@ -26,8 +26,8 @@ module.exports = {
 	},
 
 	isEmailVerified : (req, res)=>{
+		console.log(req.body)
 		userModel.findOne({_id: req.body.id}, (err, data) => {
-			console.log(data)
 			if (!data) {
 				res.status(500).send(err);
 			}else {
@@ -46,8 +46,6 @@ module.exports = {
 			if (err){
 				res.status(500).send(err);
 			}else{
-				console.log(user.emailCode,"user from database");
-				console.log(req.body.emailCode,"requset user ");
 				if (user.emailCode === req.body.emailCode){
 					user.isEmailVerified = true;
 					user.save(function (err, user) {
@@ -70,11 +68,10 @@ module.exports = {
 			if (!user) {
 				res.status(500).send("Wrong emial");
 			}else{
-				//console.log(req.body,"reqssssssssss")
 				if(user.password === req.body.password){
 					var token = jwt.encode(user, 'secret');
 					res.setHeader('x-access-token',token);
-					res.json({token: token, userId : user._id});
+					res.json({token: token, id : user._id});
 				}else{
 					res.json("pass not valid");
 				}

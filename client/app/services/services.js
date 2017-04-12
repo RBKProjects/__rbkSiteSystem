@@ -1,7 +1,7 @@
 angular.module('rbkSiteSystem.services',[])
 .factory('User', ($http, $window)=> {
 
-	let login = function (userData) {
+	let login = (userData)=> {
 		return $http({
 			method : 'POST',
 			url : '/api/user/signin',
@@ -11,7 +11,7 @@ angular.module('rbkSiteSystem.services',[])
 		})
 	}
 
-	let signup = function (userData) {
+	let signup = (userData)=> {
 		return $http({
 			method : 'POST',
 			url : '/api/user/signup',
@@ -21,8 +21,7 @@ angular.module('rbkSiteSystem.services',[])
 		})
 	}
 
-
-	let update = function (userData) {
+	let update = (userData)=> {
 		return $http({
 			method : 'PUT',
 			url : '/api/user/update/:' + userData.id,
@@ -31,7 +30,18 @@ angular.module('rbkSiteSystem.services',[])
 			return resp;
 		})
 	}
-	let verifyUser = function (userData) {
+
+	let isEmailVerified = (userData)=> {
+		return $http({
+			method : 'post',
+			url : '/api/user/verify/isEmailVerified',
+			data : userData
+		}).then((resp)=> {
+			return resp;
+		})
+	}
+
+	let verifyUser =  (userData)=> {
 		return $http({
 			method : 'POST',
 			url : '/api/user/verify/:' + userData.id,
@@ -44,6 +54,8 @@ angular.module('rbkSiteSystem.services',[])
 	return {
 		login : login,
 		signup : signup,
-		update : update
+		update : update,
+		isEmailVerified : isEmailVerified,
+		verifyUser : verifyUser
 	}
 })
