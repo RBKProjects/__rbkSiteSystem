@@ -12,9 +12,18 @@ body {
 }
 
 .mainContentDiv {
-    background-color: white;
+    background-color: #FFF;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px #aaa;
+    max-width:  500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 25px; 
 }
 
+.mainContentDiv input, select {
+  max-width: 465px;
+}
 .brand {
     margin-left: 130px;
     vertical-align: middle;
@@ -23,7 +32,10 @@ body {
 .bs-wizard {
     margin-top: 40px;
 }
-
+.nav>li>a {
+  padding-top: 25px;
+  height:70px;
+}
 
 /*Form Wizard*/
 
