@@ -14,28 +14,46 @@ const UserSchema = new mongoose.Schema({
 		required : true
 	},
 	phone : {
-		type : String,
+		type : String
 	},
 	nationality : {
-		type : String,
+		type : String
 	},
 	gender : {
-		type : String,
+		type : String
 	},
 	isRefugee : {
-		type : Boolean,
+		type : Boolean
 	},
 	email : {
 		type : String,
 		required : true,
-		unique: true,
+		unique: true
+	},
+	dateOfBirth : {
+		type : String,
+	},
+	timestamp: { // applying date
+		type: Date
+		//default: Date.now
+	},
+	educationLevel: {
+		type: String,
+	},
+	englishAbility: {
+		type: Number,
+	},
+	knowRBK: {
+		type: String,
+	},
+	codeExperience: {
+		type: Boolean,
 	},
 	emailCode : {
 		type: String
 	},
 	isEmailVerifid : {
 		type : Boolean,
-		default : false
 	}
 })
 
