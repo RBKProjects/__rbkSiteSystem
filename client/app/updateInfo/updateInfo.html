@@ -1,16 +1,20 @@
     <div class="container">
-        <h1>Update info</h1>
+        <h1>Candidate Info</h1>
         <div class="form-group">
             <label>First Name</label>
-            <input type="textbox" class="form-control" ng-model="user.firstName" placeholder="first name..">
+            <input type="textbox" class="form-control" ng-model="user.firstName" placeholder="First name..">
         </div>
         <div class="form-group">
             <label >Last Name</label>
-            <input type="textbox" class="form-control" ng-model="user.lastName" placeholder="last name..">
+            <input type="textbox" class="form-control" ng-model="user.lastName" placeholder="Last name..">
         </div>
         <div class="form-group">
             <label >Phone</label>
             <input type="textbox" class="form-control" ng-model="user.phone" placeholder="Phone..">
+        </div>
+        <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="Date" class="form-control" ng-model="user.dateOfBirth" placeholder="Nationality..">
         </div>
         <div class="form-group">
             <label>Nationality</label>
@@ -25,6 +29,49 @@
             <select class="form-control" ng-model="user.gender">
               <option value="male">Male</option>
               <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>English Ability</label>
+            <p>1 is The Worst, 5 is The Best</p>
+            <select class="form-control" ng-model="user.englishAbility">
+              <option value="1">1 </option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Education Level</label>
+            <select class="form-control" ng-model="user.educationLevel">
+              <option value="someHighSchool">Some High School </option>
+              <option value="hightSchoole">High School Graduate</option>
+              <option value="vocationalTraining">Vocational Training</option>
+              <option value="someUnversity">Some University</option>
+              <option value="4year">University Graduate (4+ Year Undergraduate Degree)</option>
+              <option value="master">Masters Degree</option>
+              <option value="PhD">PhD</option>
+              <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>How did you hear about the RBK?</label>
+            <select class="form-control" ng-model="user.knowRBK">
+              <option value="friend">From Friend</option>
+              <option value="email">Email</option>
+              <option value="event">Event</option>
+              <option value="facebook">Facebook</option>
+              <option value="webSearch">Web Search (Google, ect.)</option>
+              <option value="other">Masters Degree</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Do you have code experience?</label>
+            <select class="form-control" ng-model="user.codeExperience">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
         </div>
         <div class="form-group">
