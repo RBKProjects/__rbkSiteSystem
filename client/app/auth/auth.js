@@ -1,18 +1,21 @@
 angular.module('rbkSiteSystem.auth', [])
 
 .controller('authController', function ($scope, User, $location, $window ) {
-	
 
-	$scope.signup = function () {
-		User.signup($scope.user).then((data)=> {
-	        $location.path('/signin');
-    	    $window.location.reload();
+
+	$scope.signup = function (user) {
+		User.signup(user)
+		.then((data)=> {
+		$scope.signin({email : user.email, password : user.password })
+			//console.log(data.data['_id'])
+			//$location.path('/verify/:'+ data.data['_id']);
+    	    //$window.location.reload();
 		})
 	}
 
-	$scope.signin = function () {
-		User.login($scope.userData).then((data)=>{
+	$scope.signin = function (user) {
+		User.login(user).then((data)=>{
 			console.log(data)
 		})
-	} 
+	}
 });

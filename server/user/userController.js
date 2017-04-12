@@ -39,6 +39,7 @@ module.exports = {
 		})
 	},
 
+
 	verifyUser : (req, res) => {
 		userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
 			if (err){
@@ -59,7 +60,8 @@ module.exports = {
 				}
 			}
 		});
-	},
+		}
+	,
 
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
@@ -79,26 +81,26 @@ module.exports = {
 
 	updateUser : (req, res) => {
 		userModel.findOne({_id : req.params.id }, function(err, user){
-			if(err){
-				res.status(500).send(err);
-			}else if(!user){
-				res.status(500).send(new Error('User does not exist'));
-			}else{
-				user.firstName = req.body.firstName || user.firstName ;
-				user.lastName = req.body.lastName || user.lastName;
-				user.email = req.body.email || user.email;
-				user.nationality = req.body.nationality || user.nationality;
-				user.isRefugee = req.body.isRefugee || user.isRefugee;
-				user.gender = req.body.gender || user.gender;
-
-				user.save(function(err, savedUser){
-					if(err){
-						res.status(500).send(err);
-					} else {
-						res.json(savedUser);
-					}
-				});
-			}
-		})
-	}
+// <<<<<<< HEAD
+      if(err){
+        res.status(500).send(err);
+      }else if(!user){
+        res.status(500).send(new Error('User does not exist'));
+      }else{
+        user.firstName = req.body.firstName || user.firstName ;
+        user.lastName = req.body.lastName || user.lastName;
+        user.email = req.body.email || user.email;
+        user.nationality = req.body.nationality || user.nationality;
+        user.isRefugee = req.body.isRefugee || user.isRefugee;
+        user.gender = req.body.gender || user.gender;
+        user.save(function(err, savedUser){
+          if(err){
+            res.status(500).send(err);
+          } else {
+            res.json(savedUser);
+          }
+        });
+      }
+    })
+}
 }
