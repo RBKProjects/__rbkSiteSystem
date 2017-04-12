@@ -17,26 +17,22 @@ module.exports = {
 			}
 		});
 	},
-		verifyUser : (req, res) => {
-			console.log(req.body);
-			userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
-					if (err){
-						res.status(500).send(err);
-					}else{
-						console.log(user);
-						if (user.emailCode === req.body.emailCode){
-							user.isEmailVerified = true;
-							res.json(true);
-						}
-						else{
-							res.json(false);
-							user.isEmailVerified = false;
-						}
+	verifyUser : (req, res) => {
+		console.log(req.body);
+		userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
+			if (err){
+				res.status(500).send(err);
+			}else{
+				console.log(user);
+				if (user.emailCode === req.body.emailCode){
+					user.isEmailVerified = true;
+					res.json(true);
+				}else{
+					res.json(false);
+					user.isEmailVerified = false;
+				}
 			}
-    // console.log(doc);
-});
-
-
+		});
 		}
 	,
 	signin : (req, res) => {
@@ -57,26 +53,25 @@ module.exports = {
 
 	updateUser : (req, res) => {
 		userModel.findOne({_id : req.params.id }, function(err, user){
-	      if(err){
-	        res.status(500).send(err);
-	      }else if(!user){
-	        res.status(500).send(new Error('User does not exist'));
-	      }else{
-	        user.firstName = req.body.firstName || user.firstName ;
-	        user.lastName = req.body.lastName || user.lastName;
-	        user.email = req.body.email || user.email;
-	        user.nationality = req.body.nationality || user.nationality;
-	        user.isRefugee = req.body.isRefugee || user.isRefugee;
-	        user.gender = req.body.gender || user.gender;
-
-	        user.save(function(err, savedUser){
-	          if(err){
-	            res.status(500).send(err);
-	          } else {
-	            res.json(savedUser);
-	          }
-	        });
-	      }
-	    })
+      if(err){
+        res.status(500).send(err);
+      }else if(!user){
+        res.status(500).send(new Error('User does not exist'));
+      }else{
+        user.firstName = req.body.firstName || user.firstName ;
+        user.lastName = req.body.lastName || user.lastName;
+        user.email = req.body.email || user.email;
+        user.nationality = req.body.nationality || user.nationality;
+        user.isRefugee = req.body.isRefugee || user.isRefugee;
+        user.gender = req.body.gender || user.gender;
+        user.save(function(err, savedUser){
+          if(err){
+            res.status(500).send(err);
+          } else {
+            res.json(savedUser);
+          }
+        });
+      }
+    })
 	}
 }
