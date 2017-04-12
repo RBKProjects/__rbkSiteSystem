@@ -99,8 +99,6 @@ module.exports = {
 				user.knowRBK = req.body.knowRBK || user.knowRBK;
 				user.codeExperience = req.body.codeExperience || user.codeExperience;
 				user.isRefugee = req.body.isRefugee || user.isRefugee;
-
-
         user.save(function(err, savedUser){
           if(err){
             res.status(500).send(err);
