@@ -17,13 +17,21 @@ module.exports = {
 			}
 		});
 	},
+<<<<<<< HEAD
 	verifyUser : (req, res) => {
 		console.log(req.body);
+=======
+
+	verifyUser : (req, res) => {
+>>>>>>> 0be5125e67eb9c563775efc60dd0b12af1ef858d
 		userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
 			if (err){
 				res.status(500).send(err);
 			}else{
+<<<<<<< HEAD
 				console.log(user);
+=======
+>>>>>>> 0be5125e67eb9c563775efc60dd0b12af1ef858d
 				if (user.emailCode === req.body.emailCode){
 					user.isEmailVerified = true;
 					res.json(true);
@@ -33,8 +41,13 @@ module.exports = {
 				}
 			}
 		});
+<<<<<<< HEAD
 		}
 	,
+=======
+	},
+
+>>>>>>> 0be5125e67eb9c563775efc60dd0b12af1ef858d
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
 			if (err) {
@@ -53,6 +66,7 @@ module.exports = {
 
 	updateUser : (req, res) => {
 		userModel.findOne({_id : req.params.id }, function(err, user){
+<<<<<<< HEAD
       if(err){
         res.status(500).send(err);
       }else if(!user){
@@ -73,5 +87,28 @@ module.exports = {
         });
       }
     })
+=======
+			if(err){
+				res.status(500).send(err);
+			}else if(!user){
+				res.status(500).send(new Error('User does not exist'));
+			}else{
+				user.firstName = req.body.firstName || user.firstName ;
+				user.lastName = req.body.lastName || user.lastName;
+				user.email = req.body.email || user.email;
+				user.nationality = req.body.nationality || user.nationality;
+				user.isRefugee = req.body.isRefugee || user.isRefugee;
+				user.gender = req.body.gender || user.gender;
+
+				user.save(function(err, savedUser){
+					if(err){
+						res.status(500).send(err);
+					} else {
+						res.json(savedUser);
+					}
+				});
+			}
+		})
+>>>>>>> 0be5125e67eb9c563775efc60dd0b12af1ef858d
 	}
 }

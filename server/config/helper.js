@@ -1,8 +1,8 @@
 const randomstring = require("randomstring");
 const nodemailer = require('nodemailer');
 
-module.exports = { 
-	
+module.exports = {
+
 	 verify : (to, code)=> {
 		let transporter = nodemailer.createTransport({
 		    service: 'gmail',
@@ -13,15 +13,15 @@ module.exports = {
 		});
 
 		let mailOptions = {
-		    from: '"RBK ADMISSINS" <rebootkamp.jo@gmail.com>', // sender address
-		    to: to, 
-		    subject: 'Verifying Email ✔', // Subject line
-		    text: 'Hello world ?', // plain text body
+		    from: '"RBK ADMISSINS" <rebootkamp.jo@gmail.com>',
+		    to: to,
+		    subject: 'Verifying Email ✔',
+		    text: 'Hello world ?',
 		    html: '<p>Hello! <br>' +
-	 			'Thank you for creating your RBK Account.</p>'+ 
-				'<p> Please verify your email address by copying and pasting the following code: '+ code + '</p>'+ 
+	 			'Thank you for creating your RBK Account.</p>'+
+				'<p> Please verify your email address by copying and pasting the following code: '+ code + '</p>'+
 				'<p>If you are having issues with your account, please don\'t hesitate to contact us by sending email to admissions@rbk.org <br>'+
-				'Looking forward to meeting you! The RBK Team</p>'   
+				'Looking forward to meeting you! The RBK Team</p>'
 		};
 
 		transporter.sendMail(mailOptions, (error, info) => {
