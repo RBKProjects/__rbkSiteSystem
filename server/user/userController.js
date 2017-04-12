@@ -27,7 +27,8 @@ module.exports = {
 
 	isEmailVerified : (req, res)=>{
 		userModel.findOne({_id: req.body.id}, (err, data) => {
-			if (err) {
+			console.log(data)
+			if (!data) {
 				res.status(500).send(err);
 			}else {
 				if (data.isEmailVerified) {
@@ -65,9 +66,11 @@ module.exports = {
 
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
-			if (err) {
-				throw err;
+			console.log(user)
+			if (!user) {
+				res.status(500).send("Wrong emial");
 			}else{
+				//console.log(req.body,"reqssssssssss")
 				if(user.password === req.body.password){
 					var token = jwt.encode(user, 'secret');
 					res.setHeader('x-access-token',token);
@@ -81,7 +84,6 @@ module.exports = {
 
 	updateUser : (req, res) => {
 		userModel.findOne({_id : req.params.id }, function(err, user){
-// <<<<<<< HEAD
       if(err){
         res.status(500).send(err);
       }else if(!user){
