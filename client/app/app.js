@@ -15,7 +15,7 @@ angular.module('rbkSiteSystem', [
       controller: 'authController'
     })
     .when('/verify/:id', {
-      templateUrl: 'app/verify/verify.html',
+      templateUrl: 'app/auth/verify.html',
       controller: 'authController'
     })
     .when('/update/:id', {

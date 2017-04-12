@@ -24,7 +24,7 @@ angular.module('rbkSiteSystem.services',[])
 	let update = (userData)=> {
 		return $http({
 			method : 'PUT',
-			url : '/api/user/update/:' + userData.id,
+			url : '/api/user/update/' + userData.id,
 			data : userData
 		}).then((resp)=> {
 			return resp;
@@ -42,10 +42,11 @@ angular.module('rbkSiteSystem.services',[])
 	}
 
 	let verifyUser =  (userData)=> {
+		console.log(userData)
 		return $http({
 			method : 'POST',
-			url : '/api/user/verify/:' + userData.id,
-			data : userData
+			url : '/api/user/verify/' + userData.id,
+			data : { emailCode : userData.code}
 		}).then((resp)=> {
 			return resp;
 		})

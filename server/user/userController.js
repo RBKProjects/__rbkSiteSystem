@@ -42,11 +42,10 @@ module.exports = {
 		})
 	},
 
-
 	verifyUser : (req, res) => {
 		userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
-			if (err){
-				res.status(500).send(err);
+			if (!user){
+				res.status(500).send("user not found");
 			}else{
 				if (user.emailCode === req.body.emailCode){
 					user.isEmailVerified = true;
@@ -54,15 +53,14 @@ module.exports = {
 					   if (err) {
 						   res.status(500).send(err)
 					   }
-					   res.json(user);
+					   res.json( { isEmailVerified : user.isEmailVerified });
 				    });
 				}else{
 					res.json(false);
 				}
 			}
 		});
-		}
-	,
+	},
 
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
