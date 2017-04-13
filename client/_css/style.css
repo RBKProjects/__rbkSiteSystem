@@ -1,14 +1,28 @@
+/*
+RBK logo color: #b32082
+*/
+
+
 @media (min-width: 1200px) {
     .container{
         max-width: 500px;
     }
+    .container1{
+        max-width: 1200px;
+        text-align: center;
+        background-color: inherit;
+    }
 }
 body {
-    background-color: #f6f6f6;
+    /*background-color: #ccc;*/
+    background-color: #e8e6e6;
+}
+.admissionPortalTitle{
+  color:#b32082;
 }
 .navbar {
     background-color: #FFF;
-    height: 70px;
+    height: 70px;  
 }
 .col-center {
     margin: 0 auto;
@@ -16,8 +30,10 @@ body {
 .navbar a {
     color: #b32082;
 }
+.container1{
+  background-color: #e8e6e6;
+}
 .container{
-  background-color: #FFF;
   background-color: #FFF;
   border-radius: 2px;
   box-shadow: 2px 2px 5px #aaa;
@@ -43,6 +59,7 @@ body {
     padding-top: 25px;
     height: 70px;
 }
+
 
 /*===================== Form Wizard =======================*/
 .bs-wizard {
