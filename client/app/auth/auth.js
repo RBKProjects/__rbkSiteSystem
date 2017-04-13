@@ -14,14 +14,14 @@ angular.module('rbkSiteSystem.auth', [])
 		User.login(user).then((data)=>{
 			$window.localStorage['isLogin'] = true;
 			$window.localStorage['token'] = data.data.token;
-        	$window.localStorage['id'] = data.data.id;
+      $window.localStorage['id'] = data.data.id;
 
 			User.isEmailVerified(data.data).then((resp)=>{
 				if (resp.data){
-					$location.path('/update/:'+ data.data['id']);
+					$location.path('/update/'+ data.data['id']);
 					$window.location.reload();
 				}else{
-					$location.path('/verify/:'+ data.data['id']);
+					$location.path('/verify/'+ data.data['id']);
 					$window.location.reload();
 				}
 			})
