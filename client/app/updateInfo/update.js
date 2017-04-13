@@ -6,7 +6,7 @@ angular.module('rbkSiteSystem.update', [])
 				if ($window.localStorage['token']) {
             $scope.user.id = $window.localStorage['id'];
             User.update($scope.user).then((data) => {
-                console.log(data)
+            console.log(data)
             })
         } else {
             console.log("log in plz");
