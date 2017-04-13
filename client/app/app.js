@@ -28,10 +28,14 @@ angular.module('rbkSiteSystem', [
 })
 
 .controller('headerController', ($scope, $window) => {
-    $scope.myVar = false
+    $scope.myVar = false;
+    if(true){
+        console.log($window.localStorage['isLogin'])
+    }
     $scope.logout = ()=>{
         $window.localStorage.clear();
         $window.localStorage['isLogin'] = false;
-        $scope.myVar = $window.localStorage['isLogin']
+        $scope.myVar = false;
+        $window.location.reload();
     }
 })

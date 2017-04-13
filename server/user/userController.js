@@ -63,7 +63,6 @@ module.exports = {
 
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
-			console.log(user)
 			if (!user) {
 				res.status(500).send("Wrong emial");
 			}else{
