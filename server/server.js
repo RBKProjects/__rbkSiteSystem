@@ -6,13 +6,13 @@ const port = process.env.PORT || 1030;
 //=============================================================================
 /*								Database									 */
 //=============================================================================
-	const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/rbkSiteSystem';
-	mongoose.connect(mongoURI);
-	db = mongoose.connection;
-
-	db.once('open',function () {
-		console.log('mongoDB is open');
-	});
+	// const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/rbkSiteSystem';
+	// mongoose.connect(mongoURI);
+	// db = mongoose.connection;
+	//
+	// db.once('open',function () {
+	// 	console.log('mongoDB is open');
+	// });
 
 
 
