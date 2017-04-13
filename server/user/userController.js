@@ -6,7 +6,6 @@ const helper = require('../config/helper.js')
 module.exports = {
 
 	signup : (req, res) => {
-
 		let userData  = req.body.user;
 		let date = new Date();
 		userData.emailCode = helper.randCode();
@@ -71,7 +70,7 @@ module.exports = {
 				if(user.password === req.body.password){
 					var token = jwt.encode(user, 'secret');
 					res.setHeader('x-access-token',token);
-					res.json({token: token, id : user._id});
+					res.json({token: token, id : user._id, userName : user.firstName + " " + user.lastName});
 				}else{
 					res.json("pass not valid");
 				}
