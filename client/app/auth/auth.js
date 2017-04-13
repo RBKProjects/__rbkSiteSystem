@@ -12,8 +12,7 @@ angular.module('rbkSiteSystem.auth', [])
 
 	$scope.signin =  (user)=> {
 		User.login(user).then((data)=>{
-			console.log(data.data)
-
+			$window.localStorage['isLogin'] = true;
 			$window.localStorage['token'] = data.data.token;
         	$window.localStorage['id'] = data.data.id;
 

@@ -4,7 +4,7 @@ angular.module('rbkSiteSystem', [
   'rbkSiteSystem.update',
   'ngRoute'
 ])
-.config(function ($routeProvider, $httpProvider) {
+.config(($routeProvider, $httpProvider) =>{
   $routeProvider
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
@@ -22,7 +22,16 @@ angular.module('rbkSiteSystem', [
       templateUrl: 'app/updateInfo/updateInfo.html',
       controller: 'updateController'
     })
-    // .otherwise({
-    //   redirectTo: '/signin'
-    // });
+    .otherwise({
+      redirectTo: '/signup'
+  })
+})
+
+.controller('headerController', ($scope, $window) => {
+    $window.localStorage['isLogin'] = false;
+    $scope.logout = ()=>{
+        $window.localStorage.clear();
+        $window.localStorage['isLogin'] = false;
+        console.log( $window.localStorage['isLogin'] == false)
+    }
 })
