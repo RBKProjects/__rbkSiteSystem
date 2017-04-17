@@ -26,7 +26,7 @@ RBK logo color: #b32082
 }
 body {
     /*background-color: #ccc;*/
-    background-color: #e8e6e6;
+    background-color: #f6f6f6;
 }
 .admissionPortalTitle{
   color:#b32082;
@@ -42,7 +42,8 @@ body {
     color: #b32082;
 }
 .container1{
-  background-color: #e8e6e6;
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
 }
 .container1 h1{
   font-size: 1.9em;
