@@ -48,7 +48,7 @@ function confirmData(id1, id2) {
 }
 
 $(document).ready(function() {
-  $("#contactButton").click(function() {
+  $("#valSignUp").click(function() {
     if (!validateText("firstName")) {
       return false;
     }
@@ -61,19 +61,19 @@ $(document).ready(function() {
     if (!validateText("confirmEmail")) {
       return false;
     }
-    // if (!confirmData("email", "confirmEmail")) {
-    //   return false;
-    // }
+    if (!confirmData("email", "confirmEmail")) {
+      return false;
+    }
     if (!validateText("password")) {
       return false;
     }
     if (!validateText("confirmPassword")) {
       return false;
     }
-    // if (!confirmData("password", "confirmPassword")) {
-    //   return false;
-    // }
-    $("form#contactForm").submit();
+    if (!confirmData("password", "confirmPassword")) {
+      return false;
+    }
+    $("valSignUp").submit();
   });
 });
 

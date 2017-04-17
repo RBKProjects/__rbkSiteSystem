@@ -11,10 +11,10 @@
         </div> -->
 <!-- <br>
 <label>Email address</label> <br> -->
-<h2> Log in </h2>
+<h2> Log in - تسجيل الدخول</h2>
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input type="text" class="form-control"   ng-model="userData.email" placeholder="Enter your email..">
+    <input type="text" class="form-control" ng-model="userData.email" placeholder="Enter your email..">
   </div>
   <br>
     <!-- <label>Password</label>
@@ -25,4 +25,5 @@
     <input id="password" type="password" class="form-control" ng-model="userData.password"  placeholder="Password here..">
   </div>
   <br>
-  <button  class="btn btn-default" ng-click="signin(userData)">Sign in</button>
+  <button  class="btn btn-default" id="valSignIn" ng-click="signin(userData)">Sign in</button>
+  <script src="../../_js/formHelper.js"></script>
