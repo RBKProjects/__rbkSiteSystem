@@ -9,9 +9,7 @@ module.exports = {
 
 	signup : (req, res) => {
 		let userData  = req.body.user;
-		let date = new Date();
 		userData.emailCode = helper.randCode();
-		userData.timestamp = date;
 		userModel.findOne({email : userData.email}, (err, userEX)=>{
 			if (userEX) {
 				res.json("user already exisit")
@@ -29,7 +27,6 @@ module.exports = {
 	},
 
 	isEmailVerified : (req, res)=>{
-		console.log(req.body)
 		userModel.findOne({_id: req.body.id}, (err, data) => {
 			if (!data) {
 				res.status(500).send(err);
@@ -81,32 +78,32 @@ module.exports = {
 
 	updateUser : (req, res) => {
 		userModel.findOne({_id : req.params.id }, function(err, user){
-      if(err){
-        res.status(500).send(err);
-      }else if(!user){
-        res.status(500).send(new Error('User does not exist'));
-      }else{
-        user.firstName = req.body.firstName || user.firstName ;
-        user.lastName = req.body.lastName || user.lastName;
-        user.email = req.body.email || user.email;
-        user.nationality = req.body.nationality || user.nationality;
-        user.gender = req.body.gender || user.gender;
-				user.dateOfBirth = req.body.dateOfBirth || user.dateOfBirth;
-				user.city = req.body.city || user.city;
-				user.phone = req.body.phone || user.phone;
-				user.englishAbility = req.body.englishAbility || user.englishAbility;
-				user.educationLevel = req.body.educationLevel || user.educationLevel;
-				user.knowRBK = req.body.knowRBK || user.knowRBK;
-				user.codeExperience = req.body.codeExperience || user.codeExperience;
-				user.isRefugee = req.body.isRefugee || user.isRefugee;
-        user.save(function(err, savedUser){
-          if(err){
-            res.status(500).send(err);
-          } else {
-            res.json(savedUser);
-          }
-        });
-      }
-    })
-}
+	      if(err){
+	        res.status(500).send(err);
+	      }else if(!user){
+	        res.status(500).send(new Error('User does not exist'));
+	      }else{
+	        user.firstName = req.body.firstName || user.firstName ;
+	        user.lastName = req.body.lastName || user.lastName;
+	        user.email = req.body.email || user.email;
+	        user.nationality = req.body.nationality || user.nationality;
+	        user.gender = req.body.gender || user.gender;
+					user.dateOfBirth = req.body.dateOfBirth || user.dateOfBirth;
+					user.city = req.body.city || user.city;
+					user.phone = req.body.phone || user.phone;
+					user.englishAbility = req.body.englishAbility || user.englishAbility;
+					user.educationLevel = req.body.educationLevel || user.educationLevel;
+					user.knowRBK = req.body.knowRBK || user.knowRBK;
+					user.codeExperience = req.body.codeExperience || user.codeExperience;
+					user.isRefugee = req.body.isRefugee || user.isRefugee;
+	        user.save(function(err, savedUser){
+	          if(err){
+	            res.status(500).send(err);
+	          } else {
+	            res.json(savedUser);
+	          }
+	        });
+	      }
+	    })
+	}
 }

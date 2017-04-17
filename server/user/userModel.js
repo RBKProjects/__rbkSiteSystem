@@ -33,9 +33,9 @@ const UserSchema = new mongoose.Schema({
 	dateOfBirth : {
 		type : String,
 	},
-	timestamp: { // applying date
+	timestamp: {
 		type: Date
-		//default: Date.now
+		default: Date.now
 	},
 	educationLevel: {
 		type: String,

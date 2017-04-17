@@ -24,6 +24,7 @@ angular.module('rbkSiteSystem.auth', []).controller('authController', function($
     })
   }
 
+
   $scope.verify = (code) => {
     User.verifyUser({id: $window.localStorage['id'], code: code}).then((resp) => {
       if (resp.data.isEmailVerified) {
