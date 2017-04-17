@@ -1,13 +1,21 @@
 const mongoose = require ('mongoose');
 
 const QuestionSchema = new mongoose.Schema({
-    section : {
+    sectionName : {
 		type : String,
+		required : true
+	},
+    sectionNum : {
+		type : Number,
 		required : true
 	},
     title : {
 		type : String,
 		required : true
+	},
+    timestamp: {
+		type: Date,
+        default: Date.now
 	},
     description : {
 		type : String,
