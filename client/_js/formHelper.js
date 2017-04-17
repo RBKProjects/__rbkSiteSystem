@@ -63,7 +63,14 @@ $(document).ready(function() {
   $('#confirmPassword').bind("cut copy paste", function(e) {
     e.preventDefault();
   });
-  $("#valSignIn").click(function() {});
+  $("#valSignIn").click(function() {
+    if (!validateText("email")) {
+      return false;
+    }
+    if (!validateText("password")) {
+      return false;
+    }
+  });
   $("#valSignUp").click(function() {
     if (!validateText("firstName")) {
       return false;
