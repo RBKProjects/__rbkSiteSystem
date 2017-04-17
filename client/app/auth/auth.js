@@ -2,6 +2,9 @@ angular.module('rbkSiteSystem.auth', [])
 
 .controller('authController', function ($scope, User, $location, $window ) {
 
+	let isMatch = (firstValue, secValue)=> {
+		return firstValue === secValue
+	}
 
 	$scope.signup = (user)=> {
 		User.signup(user)
