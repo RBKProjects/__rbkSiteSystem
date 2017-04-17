@@ -93,8 +93,6 @@ $(document).ready(function() {
     if (!validateText("inputVerify")) {
       return false;
     }
-
-    }
   });
   $("#valSignUp").click(function() {
     if (!validateText("firstName")) {
