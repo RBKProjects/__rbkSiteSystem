@@ -36,6 +36,24 @@ function validateEmail(id) {
     return true;
   }
 }
+function validateVerify(id) {
+  var verify_regex = /^\d{5}$/;
+  if (!verify_regex.test($("#" + id).val())) {
+    var div = $("#" + id).closest("div");
+    div.removeClass("has-success");
+    $("#glypcn" + id).remove();
+    div.addClass("has-error has-feedback");
+    div.append('<span id="glypcn' + id + '" class="glyphicon glyphicon-remove form-control-feedback"></span>');
+    return false;
+  } else {
+    var div = $("#" + id).closest("div");
+    div.removeClass("has-error");
+    $("#glypcn" + id).remove();
+    div.addClass("has-success has-feedback");
+    div.append('<span id="glypcn' + id + '" class="glyphicon glyphicon-ok form-control-feedback"></span>');
+    return true;
+  }
+}
 
 function confirmData(id1, id2) {
   if ($("#" + id1).val() === $("#" + id2).val()) {
@@ -69,6 +87,13 @@ $(document).ready(function() {
     }
     if (!validateText("password")) {
       return false;
+    }
+  });
+  $("#verify").click(function() {
+    if (!validateText("inputVerify")) {
+      return false;
+    }
+
     }
   });
   $("#valSignUp").click(function() {
