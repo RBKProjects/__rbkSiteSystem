@@ -37,17 +37,30 @@ function validateEmail(id) {
   }
 }
 
+
 function confirmData(id1, id2) {
   if ($("#" + id1).val() === $("#" + id2).val()) {
-    alert('info are matched');
+    var div = $("#" + id2).closest("div");
+    div.removeClass("has-error");
+    $("#glypcn" + id2).remove();
+    div.addClass("has-success has-feedback");
+    div.append('<span id="glypcn' + id2 + '" class="glyphicon glyphicon-ok form-control-feedback"></span>');
     return true;
   } else {
-    alert("info aren't matched");
+    var div = $("#" + id2).closest("div");
+    div.removeClass("has-success");
+    $("#glypcn" + id2).remove();
+    div.addClass("has-error has-feedback");
+    div.append('<span id="glypcn' + id2 + '" class="glyphicon glyphicon-remove form-control-feedback"></span>');
+    alert("Inputs didn't matched! Please confirm the inputs");
     return false;
   }
 }
 
 $(document).ready(function() {
+  $("#valSignIn").click(function() {
+
+  });
   $("#valSignUp").click(function() {
     if (!validateText("firstName")) {
       return false;
@@ -58,16 +71,10 @@ $(document).ready(function() {
     if (!validateEmail("email")) {
       return false;
     }
-    if (!validateText("confirmEmail")) {
-      return false;
-    }
     if (!confirmData("email", "confirmEmail")) {
       return false;
     }
     if (!validateText("password")) {
-      return false;
-    }
-    if (!validateText("confirmPassword")) {
       return false;
     }
     if (!confirmData("password", "confirmPassword")) {
