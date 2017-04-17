@@ -1,6 +1,25 @@
 /*
 RBK logo color: #b32082
 */
+.btn-default {
+  color: #FFF;
+  /*background-color: #fff;*/
+  background-color: #b32082;
+  border-color: #ccc;
+}
+
+.btn-default:focus,
+.btn-default.focus {
+  color: #FFF;
+  background-color: #b32082;
+  border-color: #6b0348;
+}
+.btn-default:hover {
+  color: #cfcfcf;
+  background-color: #b32082;
+  border-color: #6b0348;
+}
+
 
 .form-control:focus {
   border-color: #ca80b1;
@@ -26,7 +45,7 @@ RBK logo color: #b32082
 }
 body {
     /*background-color: #ccc;*/
-    background-color: #e8e6e6;
+    background-color: #f6f6f6;
 }
 .admissionPortalTitle{
   color:#b32082;
@@ -42,7 +61,8 @@ body {
     color: #b32082;
 }
 .container1{
-  background-color: #e8e6e6;
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
 }
 .container1 h1{
   font-size: 1.9em;
