@@ -1,6 +1,25 @@
 /*
 RBK logo color: #b32082
 */
+.btn-default {
+  color: #FFF;
+  /*background-color: #fff;*/
+  background-color: #b32082;
+  border-color: #ccc;
+}
+
+.btn-default:focus,
+.btn-default.focus {
+  color: #FFF;
+  background-color: #b32082;
+  border-color: #6b0348;
+}
+.btn-default:hover {
+  color: #cfcfcf;
+  background-color: #b32082;
+  border-color: #6b0348;
+}
+
 
 .form-control:focus {
   border-color: #ca80b1;
