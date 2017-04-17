@@ -37,7 +37,6 @@ function validateEmail(id) {
   }
 }
 
-
 function confirmData(id1, id2) {
   if ($("#" + id1).val() === $("#" + id2).val()) {
     var div = $("#" + id2).closest("div");
@@ -58,9 +57,13 @@ function confirmData(id1, id2) {
 }
 
 $(document).ready(function() {
-  $("#valSignIn").click(function() {
-
+  $('#confirmEmail').bind("cut copy paste", function(e) {
+    e.preventDefault();
   });
+  $('#confirmPassword').bind("cut copy paste", function(e) {
+    e.preventDefault();
+  });
+  $("#valSignIn").click(function() {});
   $("#valSignUp").click(function() {
     if (!validateText("firstName")) {
       return false;
