@@ -2,6 +2,8 @@ const jwt = require('jwt-simple');
 const userModel = require('./userModel.js');
 const mongoose = require ('mongoose');
 const helper = require('../config/helper.js')
+// const email = ['gmail.com', 'live.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'icloud.com' , 'windowslive.com'];
+
 
 module.exports = {
 

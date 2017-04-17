@@ -1,27 +1,113 @@
+<h2>Sign up</h2>
 
-        <h2>Sign up</h2>
-        <div class="form-group">
-            <label>First Name</label>
-            <input type="textbox" class="form-control" ng-model="user.firstName" placeholder="First Name..">
+<div class="form-group">
+    <label>First Name<sup>*</sup></label>
+    <input type="textbox" class="form-control control-label" id="firstName" ng-model="user.firstName" placeholder="First Name..">
+</div>
+<div class="form-group">
+    <label>Last Name<sup>*</sup></label>
+    <input type="textbox" class="form-control" id="lastName" ng-model="user.lastName" placeholder="Last Name..">
+</div>
+<div class="form-group">
+    <label>Email address<sup>*</sup></label>
+    <input type="textbox" class="form-control" id="email" ng-model="user.email" placeholder="Email..">
+</div>
+<div class="form-group">
+    <label>Confirm email address<sup>*</sup></label>
+    <input type="textbox" class="form-control" id="confirmEmail" data-match="email" placeholder="Confirm Email..">
+</div>
+<div class="form-group">
+    <label>Password<sup>*</sup></label>
+    <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password..">
+</div>
+<div class="form-group">
+    <label>Confirm password<sup>*</sup></label>
+    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password..">
+</div>
+<button ng-click="signup(user)" class="btn btn-default" id="contactButton">submit</button>
+<script src="../../_js/formHelper.js"></script>
+
+
+
+<!-- <div class="form-horizontal">
+<div class="form-group has-success has-feedback">
+<label class="control-label col-sm-3">Input with success</label>
+<div class="col-sm-9">
+<input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+<span id="inputSuccess3Status" class="sr-only">(success)</span>
+</div>
+</div>
+<div class="form-group has-success has-feedback">
+<label class="control-label col-sm-3" for="inputGroupSuccess2">Input group with success</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon">@</span>
+<input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status">
+</div>
+<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+<span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+</div>
+</div>
+</div> -->
+
+
+<!-- <form class="form-horizontal" id="contactForm">
+    <div class="form-group">
+        <label for="contactName" class="col-sm-2 control-label">Name<sup>*</sup></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="contactName">
         </div>
-        <div class="form-group">
-            <label>Last Name</label>
-            <input type="textbox" class="form-control" ng-model="user.lastName" placeholder="Last Name..">
+    </div>
+    <div class="form-group">
+        <label for="contactEmail" class="col-sm-2 control-label">Email<sup>*</sup></label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="contactEmail">
         </div>
-        <div class="form-group">
-            <label>Email address</label>
-            <input type="textbox" class="form-control" ng-model="user.email" placeholder="Email..">
+    </div>
+    <div class="form-group">
+        <label for="contactMobile" class="col-sm-2 control-label">Mobile Number<sup>*</sup></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="contactMobile">
         </div>
-        <div class="form-group">
-            <label>Confirm email address</label>
-            <input type="textbox" class="form-control"  placeholder="Confirm Email..">
+    </div>
+    <div class="form-group">
+        <label for="contactAddress1" class="col-sm-2 control-label">Address1<sup>*</sup></label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="5" id="contactAddress1"></textarea>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" ng-model="user.password" placeholder="Password..">
+    </div>
+    <div class="form-group">
+        <label for="contactAddress2" class="col-sm-2 control-label">Address2</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="5" id="contactAddress2"></textarea>
         </div>
-        <div class="form-group">
-            <label>Confirm password</label>
-            <input type="password" class="form-control"  placeholder="Confirm Password..">
+    </div>
+    <div class="form-group">
+        <label for="contactCity" class="col-sm-2 control-label">City<sup>*</sup></label>
+        <div class="col-sm-10">
+            <select class="form-control" id="contactCity">
+                <option>KURUKSHETRA</option>
+                <option>PEHOWA</option>
+                <option>KARNAL</option>
+            </select>
         </div>
-        <button ng-click="signup(user)" class="btn btn-default">submit</button>
+    </div>
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+            <p>
+                <span id="helpBlock" class="help-block"><sup>*</sup> marked fields are compulsory!</span>
+            </p>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> I agree to the <a href="#">Terms of Service</a>
+        </label>
+    </div>
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <center>
+            <p>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+            </p>
+        </center>
+    </div>
+</form> -->
