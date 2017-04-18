@@ -8,7 +8,7 @@ module.exports = {
 		    service: 'gmail',
 		    auth: {
 		        user: 'rebootkamp.jo@gmail.com',
-		        pass: 'hackUrwayout'
+		        pass: 'hackerSpace1.'
 		    }
 		});
 
@@ -37,7 +37,7 @@ module.exports = {
 		   service: 'gmail',
 		   auth: {
 			   user: 'rebootkamp.jo@gmail.com',
-			   pass: 'hackUrwayout'
+			   pass: 'hackerSpace1.'
 		   }
 	   });
 
