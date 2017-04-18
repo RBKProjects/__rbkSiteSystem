@@ -23,7 +23,7 @@ angular.module('rbkSiteSystem', [
       controller: 'updateController'
     })
     .otherwise({
-      redirectTo: '/signup'
+      redirectTo: '/signin'
   })
 })
 
