@@ -75,9 +75,11 @@
             </select>
         </div>
         <div class="form-group">
-          <label class="checkbox-inline">
-            <input type="checkbox" value="option1" ng-model="user.isRefugee" > I'm Refugee
-          </label>
-
+            <label>Are you refugee?</label>
+            <select class="form-control" ng-model="user.isRefugee">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+        </div>
         </div>
         <button class="btn btn-default btn-block" ng-click="updateCandidateInfo()">Update</button>
