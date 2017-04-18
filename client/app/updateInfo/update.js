@@ -8,6 +8,8 @@ angular.module('rbkSiteSystem.update', [])
             	console.log(data)
 				User.sendNextStepEmail($window.localStorage['id']).then((resp)=>{
 					console.log(resp)
+					$location.path('/ChkMail');
+		            $window.location.reload();
 				})
         	})
 		} else {

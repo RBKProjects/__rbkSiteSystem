@@ -22,6 +22,11 @@ angular.module('rbkSiteSystem', [
       templateUrl: 'app/updateInfo/updateInfo.html',
       controller: 'updateController'
     })
+    .when('/ChkMail', {
+      templateUrl: 'app/updateInfo/ChkMail.html',
+      controller: 'updateController'
+    })
+
     .otherwise({
       redirectTo: '/signin'
   })
