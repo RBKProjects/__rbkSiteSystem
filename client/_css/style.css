@@ -1,6 +1,11 @@
 /*
 RBK logo color: #b32082
 */
+
+.error-msg{
+  margin-top: 5px;
+}
+
 .btn-default {
   color: #FFF;
   /*background-color: #fff;*/
