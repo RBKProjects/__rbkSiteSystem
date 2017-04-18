@@ -108,7 +108,14 @@ module.exports = {
 	},
 
 	nextSteps : (req, res)=>{
-		helper.nextSteps(req.body.email);
-		res.json("Next step has been sent")
+		userModel.findOne({_id: req.params.id}, (err, user)=> {
+			if (!user) {
+				res.json("user not found")
+			}else{
+				helper.nextSteps(user.email);
+				res.json("Next step has been sent")
+			}
+		})
+
 	}
 }

@@ -10,6 +10,6 @@ module.exports = function(app, express) {
 	app.put('/api/user/update/:id', User.updateUser);
 	app.post('/api/user/verify/isEmailVerified', User.isEmailVerified)
 	app.post('/api/user/verify/:id', User.verifyUser);
-	app.post('/api/user/nextSteps', User.nextSteps);
+	app.get('/api/user/nextSteps/:id', User.nextSteps);
 
 };

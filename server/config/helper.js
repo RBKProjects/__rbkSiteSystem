@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 
 module.exports = {
 
-	 verify : (to, code)=> {
+	verify : (to, code)=> {
 		let transporter = nodemailer.createTransport({
 		    service: 'gmail',
 		    auth: {
@@ -31,6 +31,7 @@ module.exports = {
 		    console.log('Message %s sent: %s', info.messageId, info.response);
 		});
 	},
+
 	nextSteps : (to)=> {
 	   let transporter = nodemailer.createTransport({
 		   service: 'gmail',
@@ -43,23 +44,25 @@ module.exports = {
 	   let mailOptions = {
 		   from: '"RBK ADMISSINS" <rebootkamp.jo@gmail.com>',
 		   to: to,
-		   subject: 'Verifying Email ✔',
+		   subject: 'Next Steps ',
 		   text: 'Hello world ?',
 		   html: 'Dear RBK Applicant,' +
 		    '<p>In order to complete your application to RBK, please complete the following steps.</p>'+
 		    '<p>We recommend that you allow 4 hours to complete the full application. Please note that no preparation is needed for any of these assessments.</p>'+
-			'<p> 1. Biographic Information & RBK Commitment Agreement </p>'+
-			'<p> 2. Mindset Assessment</p>'+
-			'<p> 3. Analytic Assessment</p>'+
-			'<p> 4. Code Challenge (if you have prior coding experience)</p>'+
+			'<p>1. <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqpQRPQn2KZMooNPLfuHXYD0BTrYzOx54N-zhPr5r5nV_W8w/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  Biographic Information & RBK Commitment Agreement </a></p>'+
+			'<p>2. <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8zLiy-nyIaHlW-FHgCNP3Q1DdBOQIfRc3YowhMREnKIrlFw/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  Mindset Assessment</a></p>'+
+			'<p>3. <a href="https://docs.google.com/forms/d/e/1FAIpQLSddSZWNTJ33Y4TtWaqlbEcHIOuLYl7DG4fLVC0faub1TE2A6A/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  Analytic Assessment</a></p>'+
+			'<p>4. <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4Pq8MgTRJEwuQ3Ess5onuH2dj8mV3WWMwiMKj4dQqeIOVyg/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  Code Challenge (if you have prior coding experience)</a></p>'+
 			'<p> Good luck and let\'s get started!</p><br><br>'+
+			'<div dir="rtl">' +
 			'<p> عزيزي المتقدم لطلب RBK,</p>'+
-			'<p> رجى استكمال الخطوات التالية ونوصيك بأنك تحتاج الى 4 ساعات لتعبئة الطلب كامل , يرجى ملاحظة أنه لا حاجة لإعداد لأي من هذه التقييمات.</p>'+
-			'<p> 1. سيرة ذاتية المعلومات ووشروط الالتزام RBK</p>'+
-			'<p> 2. تقييم عقلي</p>'+
-			'<p> 3. تقييم تحليلي</p>'+
-			'<p> 4.في البرمجة كود التحدي (إذا كان لديك معرفة برمجية سابقة)</p>'+
-			'<p> ظا سعيدا ودعونا نبدأ</p>!'
+			'<p> يرجى استكمال الخطوات التالية ونوصيك بأنك تحتاج الى 4 ساعات لتعبئة الطلب كامل , يرجى ملاحظة أنه لا حاجة لإعداد لأي من هذه التقييمات.</p>'+
+			'<p>1.<a href="https://docs.google.com/forms/d/e/1FAIpQLSdqpQRPQn2KZMooNPLfuHXYD0BTrYzOx54N-zhPr5r5nV_W8w/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  سيرة ذاتية المعلومات ووشروط الالتزام RBK</a></p>'+
+			'<p>2. <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8zLiy-nyIaHlW-FHgCNP3Q1DdBOQIfRc3YowhMREnKIrlFw/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  تقييم عقلي </a></p>'+
+			'<p>3. <a href="https://docs.google.com/forms/d/e/1FAIpQLSddSZWNTJ33Y4TtWaqlbEcHIOuLYl7DG4fLVC0faub1TE2A6A/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  تقييم تحليلي</a></p>'+
+			'<p>4. <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4Pq8MgTRJEwuQ3Ess5onuH2dj8mV3WWMwiMKj4dQqeIOVyg/viewform?utm_source=Not-Sent+Next+Steps+Emails&utm_campaign=dada8c64b1-EMAIL_CAMPAIGN_2017_02_19&utm_medium=email&utm_term=0_e7e888d45f-dada8c64b1-" >  في البرمجة كود التحدي (إذا كان لديك معرفة برمجية سابقة)</a></p>'+
+			'<p> حظا سعيدا ودعونا نبدأ</p>!' +
+			'</div>'
 	   };
 
 	   transporter.sendMail(mailOptions, (error, info) => {
@@ -68,9 +71,9 @@ module.exports = {
 		   }
 		   console.log('Message %s sent: %s', info.messageId, info.response);
 	   });
-   }
+    },
 
-	 randCode : () =>{
+	randCode : () =>{
 		return randomstring.generate({
 			length : 5,
 			charset : 'numeric'

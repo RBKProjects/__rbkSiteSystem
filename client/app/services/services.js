@@ -33,7 +33,7 @@ angular.module('rbkSiteSystem.services',[])
 
 	let isEmailVerified = (userData)=> {
 		return $http({
-			method : 'post',
+			method : 'POST',
 			url : '/api/user/verify/isEmailVerified',
 			data : userData
 		}).then((resp)=> {
@@ -41,8 +41,16 @@ angular.module('rbkSiteSystem.services',[])
 		})
 	}
 
+	let sendNextStepEmail = (id)=>{
+		return $http({
+			method : 'GET',
+			url : '/api/user/nextSteps/' + id
+		}).then((resp)=> {
+			return resp;
+		})
+	}
+
 	let verifyUser =  (userData)=> {
-		console.log(userData)
 		return $http({
 			method : 'POST',
 			url : '/api/user/verify/' + userData.id,
@@ -57,6 +65,7 @@ angular.module('rbkSiteSystem.services',[])
 		signup : signup,
 		update : update,
 		isEmailVerified : isEmailVerified,
-		verifyUser : verifyUser
+		verifyUser : verifyUser,
+		sendNextStepEmail : sendNextStepEmail
 	}
 })
