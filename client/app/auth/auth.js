@@ -11,7 +11,7 @@ angular.module('rbkSiteSystem.auth', []).controller('authController', function($
       $window.localStorage['isLogin'] = true;
       $window.localStorage['token'] = data.data.token;
       $window.localStorage['userName']
-      $window.localStorage['id'] = data.data.userName;
+      $window.localStorage['id'] = data.data.id;
       User.isEmailVerified(data.data).then((resp) => {
         if (resp.data) {
           $location.path('/update/' + data.data['id']);
