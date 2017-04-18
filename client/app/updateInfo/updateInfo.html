@@ -2,27 +2,27 @@
         <h2>Candidate Info</h2>
         <div class="form-group">
             <label>First Name</label>
-            <input type="textbox" class="form-control" ng-model="user.firstName" placeholder="First name..">
+            <input id="firstName" type="textbox" class="form-control" ng-model="user.firstName" placeholder="First name..">
         </div>
         <div class="form-group">
             <label >Last Name</label>
-            <input type="textbox" class="form-control" ng-model="user.lastName" placeholder="Last name..">
+            <input  id="lastName" type="textbox" class="form-control" ng-model="user.lastName" placeholder="Last name..">
         </div>
         <div class="form-group">
             <label >Phone</label>
-            <input type="textbox" class="form-control" ng-model="user.phone" placeholder="Phone..">
+            <input id="phone" type="number" class="form-control" ng-model="user.phone" placeholder="Phone..">
         </div>
         <div class="form-group">
             <label>Date of Birth</label>
-            <input type="Date" class="form-control" ng-model="user.dateOfBirth" placeholder="Nationality..">
+            <input type="date" id="date"  class="form-control" ng-model="user.dateOfBirth" placeholder="Date..">
         </div>
         <div class="form-group">
             <label>Nationality</label>
-            <input type="textbox" class="form-control" ng-model="user.nationality" placeholder="Nationality..">
+            <input type="textbox" id="nationality" class="form-control" ng-model="user.nationality" placeholder="Nationality..">
         </div>
         <div class="form-group">
             <label>City</label>
-            <input type="textbox" class="form-control" ng-model="user.city" placeholder="City..">
+            <input type="textbox" id="city" class="form-control" ng-model="user.city" placeholder="City..">
         </div>
         <div class="form-group">
             <label>Gender</label>
@@ -83,3 +83,4 @@
         </div>
         </div>
         <button class="btn btn-default btn-block" ng-click="updateCandidateInfo()">Update</button>
+        <script src="../../_js/formHelper.js"></script>
