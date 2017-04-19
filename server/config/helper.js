@@ -13,7 +13,7 @@ module.exports = {
 		});
 
 		let mailOptions = {
-		    from: '"RBK ADMISSINS" <rebootkamp.jo@gmail.com>',
+		    from: '"RBK ADMISSIONS" <rebootkamp.jo@gmail.com>',
 		    to: to,
 		    subject: 'Verifying Email ✔',
 		    text: 'Hello world ?',
@@ -42,7 +42,7 @@ module.exports = {
 	   });
 
 	   let mailOptions = {
-		   from: '"RBK ADMISSINS" <rebootkamp.jo@gmail.com>',
+		   from: '"RBK ADMISSIONS" <rebootkamp.jo@gmail.com>',
 		   to: to,
 		   subject: 'Next Steps ',
 		   text: 'Hello world ?',
