@@ -30,6 +30,7 @@ angular.module('rbkSiteSystem.auth', []).controller('authController', function($
       if (resp.data.isEmailVerified) {
         $location.path('/update/:' + $window.localStorage['id']);
         $window.location.reload();
+        
       }
     })
   }
