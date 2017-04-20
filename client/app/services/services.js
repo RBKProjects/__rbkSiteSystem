@@ -60,7 +60,17 @@ angular.module('rbkSiteSystem.services',[])
 		})
 	}
 
+	let sendCodeAgain = (id)=>{
+		return $http({
+			method : 'POST',
+			url : '/api/user/sendCodeAgain/' + id
+		}).then((resp)=>{
+			return resp;
+		})
+	}
+
 	return {
+		sendCodeAgain : sendCodeAgain,
 		login : login,
 		signup : signup,
 		update : update,

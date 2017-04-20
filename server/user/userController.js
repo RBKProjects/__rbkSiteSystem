@@ -63,14 +63,14 @@ module.exports = {
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
 			if (!user) {
-				res.status(500).send("Wrong emial");
+				res.status(500).send({isUser : false});
 			}else{
 				if(user.password === req.body.password){
 					var token = jwt.encode(user, 'secret');
 					res.setHeader('x-access-token',token);
 					res.json({token: token, id : user._id, userName : user.firstName + " " + user.lastName});
 				}else{
-					res.json("pass not valid");
+					res.json({isValidPass : false});
 				}
 			}
 		})
