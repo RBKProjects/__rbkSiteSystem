@@ -7,7 +7,6 @@ angular.module('rbkSiteSystem.update', [])
             User.update($scope.user).then((data) => {
             	console.log(data)
 				User.sendNextStepEmail($window.localStorage['id']).then((resp)=>{
-					console.log(resp)
 					$location.path('/ChkMail');
 		            $window.location.reload();
 				})

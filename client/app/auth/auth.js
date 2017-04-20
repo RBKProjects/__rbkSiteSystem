@@ -8,6 +8,9 @@ angular.module('rbkSiteSystem.auth', []).controller('authController', function($
 
   $scope.signin = (user) => {
     User.login(user).then((data) => {
+        if(data.data === 'pass not valid'){
+            alert("wrong password")
+        }
       $window.localStorage['isLogin'] = true;
       $window.localStorage['token'] = data.data.token;
       $window.localStorage['userName']
