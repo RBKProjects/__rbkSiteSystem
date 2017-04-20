@@ -11,5 +11,6 @@ module.exports = function(app, express) {
 	app.post('/api/user/verify/isEmailVerified', User.isEmailVerified)
 	app.post('/api/user/verify/:id', User.verifyUser);
 	app.get('/api/user/nextSteps/:id', User.nextSteps);
+	app.get('/api/user/getAll', User.getAll);
 
 };

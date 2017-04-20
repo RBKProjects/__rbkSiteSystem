@@ -12,7 +12,7 @@ module.exports = {
 		userData.emailCode = helper.randCode();
 		userModel.findOne({email : userData.email}, (err, userEX)=>{
 			if (userEX) {
-				res.json("user already exisit")
+				res.json({isUserExist : true })
 			}else {
 				userModel.create(userData, (err, data)=> {
 					if (err) {
@@ -107,7 +107,7 @@ module.exports = {
 	    })
 	},
 
-	nextSteps : (req, res)=>{
+	nextSteps : (req, res)=> {
 		userModel.findOne({_id: req.params.id}, (err, user)=> {
 			if (!user) {
 				res.json("user not found")
@@ -117,5 +117,15 @@ module.exports = {
 			}
 		})
 
+	},
+
+	getAll : (req, res)=> {
+		userModel.find({}, (err, user)=>{
+			if (!user) {
+				res.json("user not found")
+			}else{
+				res.json(user);
+			}
+		})
 	}
 }

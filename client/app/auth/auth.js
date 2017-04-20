@@ -2,15 +2,20 @@ angular.module('rbkSiteSystem.auth', []).controller('authController', function($
 
   $scope.signup = (user) => {
     User.signup(user).then((data) => {
-      $scope.signin({email: user.email, password: user.password})
+      if(data.data.isUserExist){
+          $('#msgWrongPass').remove();
+          $('#msgEmail').append('<div id="msgWrongPass" class="alert alert-danger error-msg">Invalid Information </div>')
+      }else{
+        $scope.signin({email: user.email, password: user.password})
+      }
     })
   }
 
   $scope.signin = (user) => {
     User.login(user).then((data) => {
         if(data.data.isValidPass === false || data.data.isUser === false ){
+            $('#msgWrongPass').remove();
             $('#loginMsg').append('<div id="msgWrongPass" class="alert alert-danger error-msg">Invalid Information </div>')
-            //$('#msgWrongPass').remove();
             //alert("wrong password")
         }else{
             $window.localStorage['isLogin'] = true;
