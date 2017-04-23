@@ -25,10 +25,13 @@ angular.module('rbkSiteSystem', [
     .when('/ChkMail', {
       templateUrl: 'app/updateInfo/ChkMail.html',
       controller: 'updateController'
+    }).when('/home', {
+      templateUrl: 'app/home/home.html',
+      controller: 'auth'
     })
 
     .otherwise({
-      redirectTo: '/signin'
+      redirectTo: '/home'
   })
 })
 

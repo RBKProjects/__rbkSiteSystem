@@ -1,4 +1,5 @@
-angular.module('rbkSiteSystem.auth', []).controller('authController', function($scope, User, $location, $window) {
+angular.module('rbkSiteSystem.auth', [])
+.controller('authController', function($scope, User, $location, $window) {
 
   $scope.signup = (user) => {
     User.signup(user).then((data) => {
@@ -45,7 +46,7 @@ angular.module('rbkSiteSystem.auth', []).controller('authController', function($
       if (resp.data.isEmailVerified) {
         $location.path('/update/:' + $window.localStorage['id']);
         $window.location.reload();
-        
+
       }
     })
   }

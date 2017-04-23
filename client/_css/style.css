@@ -2,6 +2,18 @@
 RBK logo color: #b32082
 */
 
+
+.home-image{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-default a {
+  color:#FFF;
+}
+.btn-default a:hover {
+  text-decoration: none;
+}
 .btn-default {
   color: #FFF;
   /*background-color: #fff;*/
