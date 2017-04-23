@@ -51,3 +51,20 @@ angular.module('rbkSiteSystem', [
         $window.location.reload();
     }
 })
+// .controller('validationController', ['$scope', function($scope) {
+//   $scope.master = {};
+
+    // $scope.update = function(userData) {
+    //   $scope.master = angular.copy(userData);
+    // };
+
+//     $scope.reset = function(form) {
+//       if (form) {
+//         form.$setPristine();
+//         form.$setUntouched();
+//       }
+//       $scope.userData = angular.copy($scope.master);
+//     };
+//
+//     $scope.reset();
+// }]);
