@@ -26,11 +26,16 @@ angular.module('rbkSiteSystem', [
       templateUrl: 'app/updateInfo/ChkMail.html',
       controller: 'updateController'
     })
-
+    .when('/admin', {
+      templateUrl: 'app/admin/admin.html',
+      controller: 'updateController'
+    })
     .otherwise({
-      redirectTo: '/signin'
+      redirectTo: '/home'
   })
 })
+
+
 
 .controller('headerController', ($scope, $window) => {
     $scope.myVar = false;

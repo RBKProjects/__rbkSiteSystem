@@ -1,4 +1,6 @@
-const User = require('../user/userController.js')
+const User = require('../user/userController.js');
+const Test = require('../test/testController.js')
+const Employee = require('../employee/employeeController.js');
 
 module.exports = function(app, express) {
 
@@ -13,4 +15,13 @@ module.exports = function(app, express) {
 	app.get('/api/user/nextSteps/:id', User.nextSteps);
 	app.get('/api/user/getAll', User.getAll);
 
+//=============================================================================
+/*										employeeRoute			   				 */
+//=============================================================================
+	app.post('/api/emp/addEmp', Employee.addEmp)
+
+//=============================================================================
+/*										testRoute			   				 */
+//=============================================================================
+	app.post('/api/test/addTest', Test.addTest)
 };
