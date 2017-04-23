@@ -6,6 +6,10 @@ angular.module('rbkSiteSystem', [
 ])
 .config(($routeProvider, $httpProvider) =>{
   $routeProvider
+    .when('/', {
+      templateUrl: 'app/home/home.html',
+      controller: 'headerController'
+    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'authController'
@@ -31,15 +35,16 @@ angular.module('rbkSiteSystem', [
       controller: 'updateController'
     })
     .otherwise({
-      redirectTo: '/home'
+      redirectTo: '/'
   })
 })
 
 
 
 .controller('headerController', ($scope, $window) => {
-    $scope.myVar = false;
 
+    $scope.myVar = false;
+    //console.log($scope.myVar)
     if( $window.localStorage['isLogin'] === 'false'){
         $scope.myVar = false;
     }else if($window.localStorage['isLogin'] === 'true'){
