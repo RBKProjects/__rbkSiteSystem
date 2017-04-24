@@ -18,7 +18,7 @@ angular.module('rbkSiteSystem.auth', [])
     User.login(user).then((data) => {
       if (data.data.isValidPass === false || data.data.isUser === false) {
         $('#msgWrongPass').remove();
-        $('#loginMsg').append('<div id="msgWrongPass" class="alert alert-danger error-msg">Invalid Information </div>')
+        $('#loginMsg').append('<div id="msgWrongPass" class="alert alert-danger error-msg">wrong email or password </div>')
         //alert("wrong password")
       } else {
         $window.localStorage['isLogin'] = true;

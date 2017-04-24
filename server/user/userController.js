@@ -64,7 +64,7 @@ module.exports = {
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
 			if (!user) {
-				res.status(500).send({isUser : false});
+				res.json({isUser : false});
 			}else{
 				if(user.password === req.body.password){
 					var token = jwt.encode(user, 'secret');

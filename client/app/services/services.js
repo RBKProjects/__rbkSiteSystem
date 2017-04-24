@@ -7,6 +7,7 @@ angular.module('rbkSiteSystem.services',[])
 			url : '/api/user/signin',
 			data : userData
 		}).then((resp)=> {
+			console.log(resp)
 			return resp;
 		})
 	}
