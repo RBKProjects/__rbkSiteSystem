@@ -7,8 +7,8 @@ angular.module('rbkSiteSystem', [
 .config(($routeProvider, $httpProvider) =>{
   $routeProvider
     .when('/', {
-      templateUrl: 'app/home/home.html',
-      controller: 'headerController'
+      templateUrl: 'app/auth/signup.html',
+      controller: 'authController'
     })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
@@ -34,17 +34,15 @@ angular.module('rbkSiteSystem', [
       templateUrl: 'app/admin/admin.html',
       controller: 'updateController'
     })
-    .otherwise({
-      redirectTo: '/'
-  })
 })
 
 
 
-.controller('headerController', ($scope, $window) => {
-
+.controller('headerController', ($scope, $window, $location) => {
     $scope.myVar = false;
-    //console.log($scope.myVar)
+    $window.localStorage['path'] = '/'
+    //console.log(myVar)
+
     if( $window.localStorage['isLogin'] === 'false'){
         $scope.myVar = false;
     }else if($window.localStorage['isLogin'] === 'true'){
@@ -56,5 +54,16 @@ angular.module('rbkSiteSystem', [
         $window.localStorage['isLogin'] = false;
         $scope.myVar = false;
         $window.location.reload();
+    }
+
+    $scope.savePath = ()=>{
+        $scope.logout();
+      if($window.localStorage['path'] !== $location.path() && $location.path() !== '/'){
+        $window.localStorage['path'] = $location.path()
+      }
+    }
+
+    $scope.complete = ()=>{
+      $location.path($window.localStorage['path']);
     }
 })

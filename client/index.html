@@ -12,16 +12,13 @@
 <body>
     <nav class="navbar" ng-controller="headerController">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#/">
+            <div ng-click="savePath()" class="navbar-header">
+                <a class="navbar-brand" href="https://www.rbk.org">
                     <img src="_images/logo.png" class="img-responsive brand" alt="RBK logo" width="120px">
                 </a>
             </div>
             <ul class="nav navbar-nav" ng-switch="myVar">
-                <li class="active"><a href="#/">Home</a></li>
-                <li ng-switch-when = "false" ><a href="#/signin">Sign in</a></li>
-                <li ng-switch-when = "false" ><a href="#/signup">Sign up</a></li>
-                <li ng-switch-when = "true" ><a  ng-click="logout()" >logout</a></li>
+                <li ng-switch-when = "true" ng-click="logout()"  ><a href="#/">logout</a></li>
             </ul>
         </div>
     </nav>

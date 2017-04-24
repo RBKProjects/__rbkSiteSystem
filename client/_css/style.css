@@ -1,7 +1,13 @@
 /*
 RBK logo color: #b32082
 */
-
+.btn-primary{
+    background-color: #b32082;
+    border-color:#A9A9A9;
+}
+.btn-link{
+    color : #b32082;
+}
 
 .home-image{
   margin-top: 15px;

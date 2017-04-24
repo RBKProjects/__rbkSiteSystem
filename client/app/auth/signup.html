@@ -1,4 +1,5 @@
-<h2>Sign up - التسجيل</h2>
+<!-- <h2>Sign up - التسجيل</h2>
+<form name="form" class="css-form" novalidate>
 
 <div class="form-group">
     <label>First Name<sup>*</sup> - الاسم الأول</label>
@@ -26,90 +27,43 @@
 </div>
 <div  id="msgEmail" class="form-group">
 </div>
-<button ng-click="signup(user)" class="btn btn-default btn-block" id="valSignUp">submit</button>
-<script src="../../_js/formHelper.js"></script>
-
-
-
-<!-- <div class="form-horizontal">
-<div class="form-group has-success has-feedback">
-<label class="control-label col-sm-3">Input with success</label>
-<div class="col-sm-9">
-<input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-<span id="inputSuccess3Status" class="sr-only">(success)</span>
-</div>
-</div>
-<div class="form-group has-success has-feedback">
-<label class="control-label col-sm-3" for="inputGroupSuccess2">Input group with success</label>
-<div class="col-sm-9">
-<div class="input-group">
-<span class="input-group-addon">@</span>
-<input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status">
-</div>
-<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-<span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
-</div>
-</div>
-</div> -->
-
-
-<!-- <form class="form-horizontal" id="contactForm">
-    <div class="form-group">
-        <label for="contactName" class="col-sm-2 control-label">Name<sup>*</sup></label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="contactName">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="contactEmail" class="col-sm-2 control-label">Email<sup>*</sup></label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="contactEmail">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="contactMobile" class="col-sm-2 control-label">Mobile Number<sup>*</sup></label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="contactMobile">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="contactAddress1" class="col-sm-2 control-label">Address1<sup>*</sup></label>
-        <div class="col-sm-10">
-            <textarea class="form-control" rows="5" id="contactAddress1"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="contactAddress2" class="col-sm-2 control-label">Address2</label>
-        <div class="col-sm-10">
-            <textarea class="form-control" rows="5" id="contactAddress2"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="contactCity" class="col-sm-2 control-label">City<sup>*</sup></label>
-        <div class="col-sm-10">
-            <select class="form-control" id="contactCity">
-                <option>KURUKSHETRA</option>
-                <option>PEHOWA</option>
-                <option>KARNAL</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
-            <p>
-                <span id="helpBlock" class="help-block"><sup>*</sup> marked fields are compulsory!</span>
-            </p>
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox"> I agree to the <a href="#">Terms of Service</a>
-        </label>
-    </div>
-    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
-        <center>
-            <p>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
-            </p>
-        </center>
-    </div>
+ <button ng-click="signup(user)" class="btn btn-default btn-block" id="valSignUp">submit</button> -->
+<!-- <input type="submit" class="btn btn-default"  ng-click="signup(user)" value="Sign up" /> -->
+<!--
+<input type="button" class="btn btn-default" ng-click="reset(form)" value="Reset" />
 </form> -->
+<!-- <script src="../../_js/formHelper.js"></script> -->
+
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>Register</h2>
+    <form name="form" ng-submit="vm.register()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+            <label for="username">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="user.firstName" required />
+            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+            <label for="username">Last name</label>
+            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="user.lastName" required />
+            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Email</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="user.email" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Email is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="user.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div id="msgEmail">
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" ng-click="signup(user)"  class="btn btn-primary">Register</button>
+            <img ng-if="vm.dataLoading"  />
+            <a href="#/signin" class="btn btn-link">Login</a>
+        </div>
+    </form>
+</div>

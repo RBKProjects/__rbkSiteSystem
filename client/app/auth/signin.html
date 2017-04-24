@@ -1,6 +1,4 @@
-
-
-        <!-- <h1>Sign in</h1>
+<!-- <h1>Sign in</h1>
         <div class="form-group">
             <label>Email address</label>
             <input type="textbox" class="form-control"   ng-model="userData.email" placeholder="Enter your email..">
@@ -11,20 +9,56 @@
         </div> -->
 <!-- <br>
 <label>Email address</label> <br> -->
-<h2> Log in - تسجيل الدخول</h2>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input type="text" id="email" class="form-control" ng-model="userData.email" placeholder="Enter your email..">
-  </div>
-  <br>
+<!-- <h2> Log in - تسجيل الدخول</h2>
+
+  <form name="form" class="css-form" novalidate>
+    <div class="input-group"> -->
+      <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+      <!-- <input type="text" id="email" name="userEmail" class="form-control" ng-model="userData.email" placeholder="Enter your email.." required="">
+      <div ng-show="form.$submitted || form.userEmail.$touched">
+        <div ng-show="form.userEmail.$error.required">Enter your email, please?
+        </div>
+      </div>
+    </div>
+    </div>
+    <br> -->
     <!-- <label>Password</label>
-  <br> -->
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input id="password" type="password" class="form-control" ng-model="userData.password"  placeholder="Password here..">
-  </div>
+      <br> -->
+    <!-- <div class="input-group"> -->
+      <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> -->
+      <!-- <input id="password" name="userPassword" type="password" class="form-control" ng-model="userData.password" placeholder="Password here.." required="">
+      <div ng-show="form.$submitted || form.userPassword.$touched">
+        <div ng-show="form.userPassword.$error.required">Enter your password, please?
+        </div>
+    </div>
     <div id="loginMsg">
     </div>
+  <br /> -->
+    <!-- <button class="btn btn-default" id="valSignIn" ng-click="signin(userData)">Sign in</button> -->
+    <!-- <input type="submit" class="btn btn-default"  ng-click="signin(userData)" value="Sign in" />
 
-  <button  class="btn btn-default btn-block" id="valSignIn" ng-click="signin(userData)">Sign in</button>
-  <script src="../../_js/formHelper.js"></script>
+    <input type="button" class="btn btn-default" ng-click="reset(form)" value="Reset" />
+  </form> -->
+<!-- <script src="../../_js/formHelper.js"></script> -->
+
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>Login</h2>
+    <form name="form" ng-submit="vm.login()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Emai</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="userData.email" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Emai is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="userData.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || userData.dataLoading" ng-click="signin(userData)" class="btn btn-primary">Login</button>
+            <img ng-if="vm.dataLoading" />
+            <a href="#/signup" class="btn btn-link">Register</a>
+        </div>
+    </form>
+</div>

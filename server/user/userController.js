@@ -18,7 +18,8 @@ module.exports = {
 					if (err) {
 						res.status(500).send(err);
 					}else{
-						helper.verify(data.email, data.emailCode);
+						//	helper.verify(data.email, data.emailCode);
+						helper.nextSteps(user.email);
 						res.json(data);
 					}
 				});
