@@ -8,6 +8,10 @@ const TestSchema = new mongoose.Schema({
 	createBy : {
 		type : mongoose.Schema.Types.ObjectId,
 		ref : 'Employee'
+	},
+	timestamp: {
+		type: Date,
+		default: Date.now
 	}
 })
 
