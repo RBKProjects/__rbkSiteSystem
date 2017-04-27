@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 
 const FillQSchema = new mongoose.Schema({
-	name : {
+	section : {
 		type : String,
 		required : true
 	},
@@ -15,7 +15,6 @@ const FillQSchema = new mongoose.Schema({
 	},
 	fillBox : {
 		type : String,
-		required : true
 	}
 })
 

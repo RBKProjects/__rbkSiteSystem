@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 
 const TrueFalseQSchema = new mongoose.Schema({
-	name : {
+	section : {
 		type : String,
 		required : true
 	},

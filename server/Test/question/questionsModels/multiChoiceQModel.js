@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 
 const multiChoiceSchema = new mongoose.Schema({
-	name : {
+	section : {
 		type : String,
 		required : true
 	},
