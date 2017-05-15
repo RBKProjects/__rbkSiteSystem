@@ -6,9 +6,9 @@ const port = process.env.PORT || 1030;
 //=============================================================================
 /*								Database									 */
 //=============================================================================
-	const mongoURI = process.env.MONGODB_URI  || 'mongodb://admin:admin@ds111549.mlab.com:11549/rbkadmissions';
+	//const mongoURI = process.env.MONGODB_URI  || 'mongodb://admin:admin@ds111549.mlab.com:11549/rbkadmissions';
 	// const mongoURI = process.env.MONGODB_URI  || 'mongodb://localhost/rbkSiteSystem';//
-	// const mongoURI = process.env.MONGODB_URI || 'mongodb://admin:admin@ds111549.mlab.com:11549/rbkadmissions';
+	 const mongoURI = process.env.MONGODB_URI || 'mongodb://heroku_2ncz6lvj:l9oh24k8qd0ioftp5tsmhom7ae@ds159880.mlab.com:59880/heroku_2ncz6lvj';
 
 	mongoose.connect(mongoURI);
 	db = mongoose.connection;

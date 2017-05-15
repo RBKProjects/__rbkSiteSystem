@@ -1,0 +1,14 @@
+<div>
+	<div ng-repeat="x in Users" style="
+		border-top-style: dotted;
+    	border-right-style: solid;
+    	border-bottom-style: dotted;
+    	border-left-style: solid;
+    ">
+		<p>Name : {{x.firstName}} {{x.lastName}} </p>
+		<p>Email : {{x.email}}</p>
+		<p ng-show="x.phone">Phone : {{x.phone}}</p>	
+		<br>
+	</div>
+	<br>	
+</div>

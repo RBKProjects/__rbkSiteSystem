@@ -69,6 +69,14 @@ angular.module('rbkSiteSystem.services',[])
 			return resp;
 		})
 	}
+	let getAllUser = ()=>{
+		return $http({
+			method : 'GET',
+			url : '/api/user/getAll' 
+		}).then((resp)=>{
+			return resp;
+		})
+	}
 
 	return {
 		sendCodeAgain : sendCodeAgain,
@@ -77,6 +85,7 @@ angular.module('rbkSiteSystem.services',[])
 		update : update,
 		isEmailVerified : isEmailVerified,
 		verifyUser : verifyUser,
-		sendNextStepEmail : sendNextStepEmail
+		sendNextStepEmail : sendNextStepEmail,
+		getAllUser : getAllUser
 	}
 })

@@ -2,6 +2,7 @@ angular.module('rbkSiteSystem', [
   'rbkSiteSystem.services',
   'rbkSiteSystem.auth',
   'rbkSiteSystem.update',
+  'rbkSiteSystem.firstGate',
   'ngRoute'
 ])
 .config(($routeProvider, $httpProvider) =>{
@@ -33,6 +34,10 @@ angular.module('rbkSiteSystem', [
     .when('/admin', {
       templateUrl: 'app/admin/admin.html',
       controller: 'updateController'
+    })
+    .when('/firstGate', {
+      templateUrl: 'app/home/firstGate.html',
+      controller: 'firstGate'
     })
 })
 
